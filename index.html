@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Slide Deck Fullscreen</title>
+    <title>Slide Deck Display</title>
     <style>
-        /* Style to make iframe fill the entire screen */
-        html, body, iframe {
+        /* Style to make iframe full screen */
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
+        }
+        iframe {
             width: 100%;
+            height: 100%;
             border: none;
         }
     </style>
     <script>
-        // Attempt to make the browser go full-screen upon loading
-        function goFullScreen() {
-            var doc = window.document;
-            var docEl = doc.documentElement;
-
-            var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-            var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-            if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-                requestFullScreen.call(docEl);
-            }
+        // Function to reload the page every 10 seconds
+        function autoReload() {
+            setTimeout(function() {
+                location.reload();
+            }, 10000); // 10000 milliseconds = 10 seconds
         }
     </script>
 </head>
-<body onload="goFullScreen();">
+<body onload="autoReload();">
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUpbVsKOQTSG4bu_ElCRZ2OAnSqc6g2mBSzgRkZRPxbXcQodMlUBHo_QAOShHC8GaIk8Zezm-onOhz/pub?start=true&loop=true&delayms=3000"></iframe>
 </body>
 </html>
