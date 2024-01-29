@@ -7,11 +7,19 @@
             var currentDateTime = new Date();
             document.getElementById('dateTime').innerHTML = currentDateTime;
         }
+
+        // Function to reload the page every 3 seconds
+        function autoReload() {
+            setTimeout(function() {
+                location.reload();
+            }, 3000); // 3000 milliseconds = 3 seconds
+        }
     </script>
 </head>
-<body onload="showDateTime()">
+<body onload="showDateTime(); autoReload();">
     <h1>Welcome to My Dropbox HTML Page!</h1>
     <p>This is a simple HTML page hosted in Dropbox.</p>
     <p>Current Date and Time: <span id="dateTime"></span></p>
+    <p>This page will reload every 3 seconds to update the time.</p>
 </body>
 </html>
