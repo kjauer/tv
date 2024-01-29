@@ -3,16 +3,24 @@
 <head>
     <title>Slide Show</title>
     <style>
-        /* Rotate the entire body by 90 degrees */
-        body {
+        /* Applying rotation to the iframe directly */
+        iframe {
             transform: rotate(90deg);
             transform-origin: left top;
-            width: 100vh;
-            height: 100vw;
+            width: 100vh; /* Use viewport height as the width */
+            height: 100vw; /* Use viewport width as the height */
             overflow-x: hidden;
             position: absolute;
-            top: 0;
+            top: -100vw; /* Shift up by full viewport width */
             left: 0;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Hide scrollbars */
         }
     </style>
     <script>
@@ -25,4 +33,6 @@
     </script>
 </head>
 <body onload="autoReload();">
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUpbVsKOQTSG4bu_ElCRZ2OAnSqc6g2mBSzgRkZRPxbXcQodMlUBHo_QAOShHC8GaIk8Zezm-onOhz/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUpbVsKOQTSG4bu_ElCRZ2OAnSqc6g2mBSzgRkZRPxbXcQodMlUBHo_QAOShHC8GaIk8Zezm-onOhz/embed?start=true&loop=true&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</body>
+</html>
