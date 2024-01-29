@@ -3,19 +3,30 @@
 <head>
     <title>Slide Show</title>
     <style>
-        /* Basic styling to ensure the iframe fills the entire viewport */
+        /* Basic styling for the body and html */
         html, body {
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Hide scrollbars */
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Hide scrollbars */
         }
 
+        /* Styling and rotating the iframe */
         iframe {
-            height: 100vh;
-            width: 100vw;
-            border: none;
+            transform: rotate(90deg); /* Rotate iframe */
+            transform-origin: right top; /* Set the origin of transformation */
+            
+            /* Adjusting the height and width after rotation */
+            height: 100vw;
+            width: 100vh;
+
+            /* Adjusting the position after rotation */
+            position: absolute;
+            top: 100%;
+            right: 0;
+
+            border: none; /* Remove any border */
         }
     </style>
     <script>
@@ -23,7 +34,7 @@
         function autoReload() {
             setTimeout(function() {
                 location.reload();
-            }, 20000); // 20000 milliseconds = 20 seconds
+            }, 10000); // 10000 milliseconds = 10 seconds
         }
     </script>
 </head>
