@@ -9,7 +9,7 @@
         html, body {
             height: 100%;
             margin: 0;
-            padding: 25px;
+            padding: 0; /* Removed padding to fit content within the viewport */
             overflow: hidden; /* Hide scrollbars */
         }
 
@@ -17,11 +17,13 @@
             transform: rotate(90deg) translateY(-100%);
             transform-origin: top left;
             position: fixed; /* Use fixed to keep it in viewport */
-            width: 100vh; /* Viewport height becomes the new width */
+            width: calc(100vh - 50px); /* Adjusted to account for removed padding */
             height: 100vw; /* Viewport width becomes the new height */
-            overflow: auto; /* Enable scrolling */
             top: 0;
-            left: 0;
+            left: 25px; /* Left padding is applied here */
+            right: 25px; /* Right padding is applied here */
+            bottom: 25px; /* Bottom padding is applied here */
+            overflow: hidden; /* Changed to hide overflow */
         }
     </style>
 </head>
