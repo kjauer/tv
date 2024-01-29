@@ -2,8 +2,22 @@
 <html>
 <head>
     <title>Twitter Post Display</title>
+    <style>
+        /* CSS to rotate the Twitter feed container */
+        .twitter-timeline-container {
+            transform: rotate(90deg);
+            transform-origin: top left;
+            /* You might need to adjust the width and height after rotation */
+            width: 1000px; 
+            height: 500px; 
+            overflow: scroll; /* To handle any overflow due to rotation */
+        }
+    </style>
 </head>
 <body>
-       <a class="twitter-timeline" href="https://twitter.com/antonioguterres?ref_src=twsrc%5Etfw">Tweets by antonioguterres</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div class="twitter-timeline-container">
+        <a class="twitter-timeline" href="https://twitter.com/antonioguterres?ref_src=twsrc%5Etfw">Tweets by antonioguterres</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
 </body>
 </html>
