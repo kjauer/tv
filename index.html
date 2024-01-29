@@ -3,11 +3,6 @@
 <head>
     <title>My Dropbox Page</title>
     <script>
-        function showDateTime() {
-            var currentDateTime = new Date();
-            document.getElementById('dateTime').innerHTML = currentDateTime;
-        }
-
         // Function to reload the page every 3 seconds
         function autoReload() {
             setTimeout(function() {
@@ -16,7 +11,7 @@
         }
     </script>
 </head>
-<body onload="showDateTime(); autoReload();">
+<body onload=autoReload();">
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUpbVsKOQTSG4bu_ElCRZ2OAnSqc6g2mBSzgRkZRPxbXcQodMlUBHo_QAOShHC8GaIk8Zezm-onOhz/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </body>
 </html>
