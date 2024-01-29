@@ -3,22 +3,29 @@
 <head>
     <title>Embedded and Rotated Page</title>
     <style>
-        /* CSS to rotate the iframe */
+        /* CSS to rotate the iframe and make it fill the whole screen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Hide scrollbars */
+        }
         iframe {
             transform: rotate(90deg);
-            transform-origin: top left;
-            /* Adjust the width and height as necessary */
-            width: 110vh; /* Using a larger viewport height to ensure complete coverage */
+            transform-origin: right top;
+            /* Set width and height to fill the screen */
+            width: 100vh;
             height: 100vw;
-            position: absolute; /* Positioning to handle layout after rotation */
-            top: -10vh; /* Adjustment for the rotation */
+            position: absolute;
+            top: 100%;
+            right: 0;
         }
     </style>
     <script>
         // JavaScript to reload the iframe every 5 minutes
         function reloadIframe() {
             var iframe = document.getElementById('rotated-iframe');
-            iframe.src += ''; // Triggering the reload
+            iframe.src = iframe.src;
         }
 
         // Set interval to 5 minutes (300000 milliseconds)
