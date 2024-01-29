@@ -6,24 +6,26 @@
     <title>Embedded Twitter Content</title>
 
     <style>
-        body {
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
             overflow: hidden; /* Hide scrollbars */
         }
 
         .rotated-content {
-            transform: rotate(90deg); /* Rotate the content */
-            transform-origin: bottom left; /* Set the origin of transformation */
-            position: absolute;
+            transform: rotate(90deg) translateY(-100%);
+            transform-origin: top left;
+            position: fixed; /* Use fixed to keep it in viewport */
             width: 100vh; /* Viewport height becomes the new width */
             height: 100vw; /* Viewport width becomes the new height */
-            overflow-y: scroll; /* Enable scrolling if needed */
-            -webkit-overflow-scrolling: touch;
+            overflow: auto; /* Enable scrolling */
+            top: 0;
+            left: 0;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://kjauer.github.io/tv/twitter.html" class="rotated-content"></iframe>
+    <iframe src="https://kjauer.github.io/tv/twitter.html" class="rotated-content" frameborder="0"></iframe>
 </body>
 </html>
