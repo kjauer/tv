@@ -1,1 +1,31 @@
-hdhd
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Embedded and Rotated Page</title>
+    <style>
+        /* CSS to rotate the iframe */
+        iframe {
+            transform: rotate(90deg);
+            transform-origin: top left;
+            /* Adjust the width and height as necessary */
+            width: 110vh; /* Using a larger viewport height to ensure complete coverage */
+            height: 100vw;
+            position: absolute; /* Positioning to handle layout after rotation */
+            top: -10vh; /* Adjustment for the rotation */
+        }
+    </style>
+    <script>
+        // JavaScript to reload the iframe every 5 minutes
+        function reloadIframe() {
+            var iframe = document.getElementById('rotated-iframe');
+            iframe.src += ''; // Triggering the reload
+        }
+
+        // Set interval to 5 minutes (300000 milliseconds)
+        setInterval(reloadIframe, 300000);
+    </script>
+</head>
+<body>
+    <iframe id="rotated-iframe" src="https://kjauer.github.io/tv/twitter.html" frameborder="0"></iframe>
+</body>
+</html>
