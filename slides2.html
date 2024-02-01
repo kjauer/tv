@@ -12,38 +12,39 @@
             width: 100%;
         }
 
-        /* Styling and rotating the iframe */
+        /* Container for the iframe to help with positioning */
+        .iframe-container {
+            position: fixed; /* Use fixed to ensure it covers the whole screen */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center; /* Center iframe horizontally */
+            align-items: center; /* Center iframe vertically */
+            overflow: hidden; /* Hide any overflow */
+        }
+
+        /* Styling for the iframe */
         iframe {
-    /* Rotate the iframe */
-    transform: rotate(-90deg);
-    transform-origin: center center; /* Rotate around the center */
-    
-    /* Set the height and width to exceed the viewport dimensions to ensure full coverage */
-    height: 100vh;
-    width: 100vw;
-
-    /* Adjust position to center the iframe in the viewport */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* Use transform to first translate the iframe to center it correctly, then rotate */
-    transform: translate(-50%, -50%) rotate(-90deg);
-
-    border: none; /* Remove any border */
-}
-
-
+            width: 100vw;
+            height: 100vh;
+            border: none; /* Remove any border */
+            /* Adjust as necessary to fill the container */
+        }
     </style>
     <script>
-        // Function to reload the page every 10 seconds
+        // Function to reload the page every 10 minutes
         function autoReload() {
             setTimeout(function() {
                 location.reload();
-            }, 600000); // 600000 milliseconds = 600 seconds
+            }, 600000); // Corrected comment to 10 minutes
         }
     </script>
 </head>
 <body onload="autoReload();">
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUpbVsKOQTSG4bu_ElCRZ2OAnSqc6g2mBSzgRkZRPxbXcQodMlUBHo_QAOShHC8GaIk8Zezm-onOhz/embed?start=true&loop=true&delayms=15000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <div class="iframe-container">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUpbVsKOQTSG4bu_ElCRZ2OAnSqc6g2mBSzgRkZRPxbXcQodMlUBHo_QAOShHC8GaIk8Zezm-onOhz/embed?start=true&loop=true&delayms=15000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
 </body>
 </html>
