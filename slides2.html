@@ -19,18 +19,23 @@
             left: 0;
             right: 0;
             bottom: 0;
-            display: flex;
-            justify-content: center; /* Center iframe horizontally */
-            align-items: center; /* Center iframe vertically */
             overflow: hidden; /* Hide any overflow */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Styling for the iframe */
+        /* Styling for the iframe, rotated and scaled */
         iframe {
-            width: 100vw;
-            height: 100vh;
+            /* Rotate the iframe */
+            transform: rotate(-90deg);
+            transform-origin: center center;
+            
+            /* Adjust the width and height to ensure full coverage after rotation */
+            width: 110vh; /* Increase width to cover viewport height */
+            height: 110vw; /* Increase height to cover viewport width */
+            
             border: none; /* Remove any border */
-            /* Adjust as necessary to fill the container */
         }
     </style>
     <script>
