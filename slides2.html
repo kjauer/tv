@@ -13,21 +13,26 @@
         }
 
         /* Styling and rotating the iframe */
-       iframe {
+     iframe {
     transform: rotate(-90deg); /* Rotate iframe */
-    transform-origin: right top; /* Set the origin of transformation */
+    transform-origin: left top; /* Adjusted to rotate around the top-left corner */
     
-    /* Adjusting the height and width after rotation */
-    height: 100vw; /* May need adjustment based on the actual viewport size */
-    width: 100vh; /* May need adjustment based on the actual viewport size */
-
-    /* Adjusting the position after rotation */
+    /* Full viewport coverage after rotation */
+    height: 100vh; /* Match the viewport's height */
+    width: 100vw; /* Match the viewport's width */
+    
+    /* Correctly position after rotation */
     position: absolute;
-    top: 0; /* Adjusted to align with the viewport's top after rotation */
-    left: 0; /* Adjusted for alignment; you might need to change this based on your layout */
+    top: 0;
+    left: 0; /* May need to adjust if the iframe doesn't start from the left edge */
+    
+    /* Offset to compensate for rotation */
+    /* These values might need fine-tuning based on your specific viewport */
+    transform: translateX(0%) translateY(-100%) rotate(-90deg);
 
     border: none; /* Remove any border */
 }
+
 
     </style>
     <script>
