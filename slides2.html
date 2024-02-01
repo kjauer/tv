@@ -13,21 +13,22 @@
         }
 
         /* Styling and rotating the iframe */
-        iframe {
-            transform: rotate(-90deg); /* Rotate iframe */
-            transform-origin: right top; /* Set the origin of transformation */
-            
-            /* Adjusting the height and width after rotation */
-            height: 100vw;
-            width: 100vh;
+       iframe {
+    transform: rotate(-90deg); /* Rotate iframe */
+    transform-origin: right top; /* Set the origin of transformation */
+    
+    /* Adjusting the height and width after rotation */
+    height: 100vw; /* May need adjustment based on the actual viewport size */
+    width: 100vh; /* May need adjustment based on the actual viewport size */
 
-            /* Adjusting the position after rotation */
-            position: absolute;
-            top: 100%;
-            right: 0;
+    /* Adjusting the position after rotation */
+    position: absolute;
+    top: 0; /* Adjusted to align with the viewport's top after rotation */
+    left: 0; /* Adjusted for alignment; you might need to change this based on your layout */
 
-            border: none; /* Remove any border */
-        }
+    border: none; /* Remove any border */
+}
+
     </style>
     <script>
         // Function to reload the page every 10 seconds
