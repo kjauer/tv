@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slide Show</title>
+    <style>
+        /* Basic styling for the body and html */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbars */
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Styling and rotating the iframe */
+        iframe {
+            transform: rotate(-90deg); /* Rotate iframe */
+            transform-origin: right top; /* Set the origin of transformation */
+            
+            /* Adjusting the height and width after rotation */
+            height: 100vw;
+            width: 100vh;
+
+            /* Adjusting the position after rotation */
+            position: absolute;
+            top: 100%;
+            right: 0;
+
+            border: none; /* Remove any border */
+        }
+    </style>
+    <script>
+        // Function to reload the page every 10 seconds
+        function autoReload() {
+            setTimeout(function() {
+                location.reload();
+            }, 600000); // 600000 milliseconds = 600 seconds
+        }
+    </script>
+</head>
+<body onload="autoReload();">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRUpbVsKOQTSG4bu_ElCRZ2OAnSqc6g2mBSzgRkZRPxbXcQodMlUBHo_QAOShHC8GaIk8Zezm-onOhz/embed?start=true&loop=true&delayms=15000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</body>
+</html>
