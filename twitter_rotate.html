@@ -4,50 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="300"> <!-- Auto-refresh every 5 minutes -->
     <title>Embedded Twitter Content</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars */
+            background-color: #1a1a1a; /* Dark background */
+        }
 
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        overflow: hidden; /* Hide scrollbars */
-        background-color: #1a1a1a; /* Dark background */
-    }
-
-    .rotated-content {
-        position: fixed; /* Keep within the viewport */
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        /* Initial dimensions set to 100vh and 100vw, will be adjusted by JS */
-        width: 100vh;
-        height: 100vw;
-    }
-</style>
+        .rotated-content {
+            position: fixed; /* Keep within the viewport */
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            transform-origin: top left;
+            /* Transformation applied through JavaScript */
+        }
+    </style>
 </head>
 <body>
     <iframe id="rotatedIframe" src="https://kjauer.github.io/tv/twitter.html" class="rotated-content" frameborder="0"></iframe>
 
-<script>
-function adjustIframe() {
-    var iframe = document.getElementById('rotatedIframe');
-    // Calculate the new width and height
-    var width = window.innerHeight;
-    var height = window.innerWidth;
-    
-    // Adjust the iframe's transform origin
-    iframe.style.transformOrigin = 'top left';
-    // Rotate and translate the iframe
-    iframe.style.transform = 'rotate(-90deg) translateX(-100%)';
-    // Adjust the width and height
-    iframe.style.width = width + 'px';
-    iframe.style.height = height + 'px';
-}
+    <script>
+    function adjustIframe() {
+        var iframe = document.getElementById('rotatedIframe');
+        // Set the iframe's width and height to match the viewport's dimensions
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        // Apply the rotation and adjust the position
+        iframe.style.transform = 'rotate(-90deg) translate(-' + height + 'px, 0px)';
+        iframe.style.width = height + 'px';
+        iframe.style.height = width + 'px';
+    }
 
-// Adjust the iframe on initial load
-adjustIframe();
-
-// Adjust the iframe whenever the window is resized
-window.addEventListener('resize', adjustIframe);
-</script>
+    // Adjust the iframe on initial load and whenever the window is resized
+    window.onload = adjustIframe;
+    window.onresize = adjustIframe;
+    </script>
 </body>
 </html>
